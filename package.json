@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node scripts/build.js",
+    "dev": "node scripts/dev.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/stackblitz/localservice/issues"
   },
-  "homepage": "https://github.com/stackblitz/localservice#readme"
+  "homepage": "https://github.com/stackblitz/localservice#readme",
+  "devDependencies": {
+    "html-minifier": "^4.0.0",
+    "live-server": "^1.2.1",
+    "rollup": "^1.12.1",
+    "rollup-plugin-terser": "^4.0.4",
+    "rollup-plugin-typescript": "^1.0.1",
+    "tslib": "^1.9.3",
+    "typescript": "^3.4.5"
+  }
 }
