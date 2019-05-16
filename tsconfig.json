@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
       "module": "esnext",
-      "noImplicitAny": true,
+      "moduleResolution": "node",
+      "baseUrl": "./",
+      "paths": {
+        "@core/*": ["src/core/*"]
+      }
   }
 }

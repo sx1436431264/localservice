@@ -22,7 +22,7 @@ export interface SerializedRequest {
   init?: {
     method?: string;
     headers?: SerializedHeaders;
-    body?: Blob;
+    body?: Blob; // Despite what the spec says, this is NOT a readable stream.
     mode?: RequestMode;
     credentials?: RequestCredentials;
     cache?: RequestCache;
