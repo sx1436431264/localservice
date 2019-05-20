@@ -1,3 +1,5 @@
+process.env['NODE_ENV'] = 'production';
+
 const rollup = require('rollup');
 
 const bundleconfig = require('./_bundleconfig.js');

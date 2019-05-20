@@ -6,3 +6,5 @@ export class Jake {
     this.doStuff()
   }
 }
+
+console.log("LS_CDN_URL")

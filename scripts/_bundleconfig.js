@@ -1,6 +1,8 @@
-// rollup.config.js
+const env = require('./_env');
+
 const typescript = require('rollup-plugin-typescript');
 const terser = require("rollup-plugin-terser").terser;
+const replace = require('rollup-plugin-replace');
 
 const bundles = [
   {
@@ -13,7 +15,10 @@ module.exports = {
   input: './src/index.ts',
   plugins: [
     typescript(),
-    terser()
+    terser(),
+    replace({
+      ...env
+    })
   ]
 },
 outputOptions: {
