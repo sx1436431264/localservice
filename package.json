@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node scripts/build.js",
-    "dev": "node scripts/dev.js"
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "compile-ts": "tsc --p tsconfig.json"
   },
   "repository": {
     "type": "git",

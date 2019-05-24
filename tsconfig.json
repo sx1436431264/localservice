@@ -3,8 +3,14 @@
       "module": "esnext",
       "moduleResolution": "node",
       "baseUrl": "./",
+      "outDir": "./tmp/",
+      "declaration": true,
+      "declarationDir": "./typings/",
       "paths": {
         "@core/*": ["src/core/*"]
       }
-  }
+  },
+  "include": [
+    "./src/"
+  ]
 }
