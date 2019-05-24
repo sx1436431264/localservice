@@ -1,5 +1,4 @@
 var fs = require("fs");
-var path = require('path');
 var rimraf = require('rimraf');
 var minify = require('html-minifier').minify;
 var vars = require('./_env');

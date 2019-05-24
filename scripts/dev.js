@@ -1,6 +1,10 @@
 process.env['NODE_ENV'] = 'development';
 
 const rollup = require('rollup');
+
+const buildAssets = require('./_buildAssets');
+buildAssets()
+
 const httpsConfig = require('./_https');
 
 const bundleconfig = require('./_bundleconfig.js');
@@ -51,7 +55,3 @@ const CDN = {
 
 liveServer.start(PWAServer);
 liveServer.start(CDN);
-
-
-const buildAssets = require('./_buildAssets');
-buildAssets()
