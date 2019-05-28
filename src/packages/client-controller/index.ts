@@ -1,18 +1,8 @@
 import {handleRequest} from '@core/controller';
 
 
-class LocalServer {
-  constructor() {}
-  listen() {
-
-  }
-  close() {
-    
-  }
-}
-
-export const startServer = (requestHandler: (request: Request) => Response | Promise<Response>, opts: {port?: number} = {}) => {
-  const serverUrl = `https://ls--${opts.port ? opts.port : 80}.stackblitz.io`;
+export const startServer = (requestHandler: (request: Request) => Response | Promise<Response>, opts: {slug?: string} = {}) => {
+  const serverUrl = `https://${opts.slug ? opts.slug : Math.floor(Math.random() * 10000) + 1}.PWA_SERVER_BASE`;
   // Open the relay
   const iframe = document.createElement('iframe');
   iframe.src = `${serverUrl}/__commrelay__`;

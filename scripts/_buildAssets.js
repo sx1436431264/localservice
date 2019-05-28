@@ -41,7 +41,7 @@ module.exports = function() {
 
   // Generate PWA server.
   copyAndMinifyHTML('./src/packages/pwa-server/runtime/index.html', './dist/server/index.html');
-  copyAndMinifyHTML('./src/packages/pwa-server/relay/__commrelay.html', './dist/server/__commrelay.html');
+  copyAndMinifyHTML('./src/packages/pwa-server/relay/__commrelay.html', './dist/server/__commrelay__.html');
   // Create stub serviceworker.
   fs.writeFileSync('./dist/server/server.js', `importScripts('${vars.LS_CDN_URL}/server.js')`, (err) => {
     if (err) console.log(err);
