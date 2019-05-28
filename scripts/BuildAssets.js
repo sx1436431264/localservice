@@ -31,19 +31,19 @@ function scaffoldDirs() {
     fs.mkdirSync(path, { recursive: true });
   }
   
-  ensureDirExists('./dist/server');
+  ensureDirExists('./dist/bundles');
+  ensureDirExists('./dist/pwa-server');
   ensureDirExists('./dist/cdn');
   ensureDirExists('./dist/example');
 }
 
-module.exports = function() {
+
   scaffoldDirs();
 
   // Generate PWA server.
-  copyAndMinifyHTML('./src/packages/pwa-server/runtime/index.html', './dist/server/index.html');
-  copyAndMinifyHTML('./src/packages/pwa-server/relay/__commrelay.html', './dist/server/__commrelay__.html');
+  copyAndMinifyHTML('./src/packages/pwa-server/runtime/index.html', './dist/pwa-server/index.html');
+  copyAndMinifyHTML('./src/packages/pwa-server/relay/__commrelay__.html', './dist/pwa-server/__commrelay__.html');
   // Create stub serviceworker.
-  fs.writeFileSync('./dist/server/server.js', `importScripts('${vars.LS_CDN_URL}/server.js')`, (err) => {
+  fs.writeFileSync('./dist/pwa-server/server.js', `importScripts('${vars.LS_CDN_URL}/server.js')`, (err) => {
     if (err) console.log(err);
   });
-}

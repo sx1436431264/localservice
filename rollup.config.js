@@ -6,9 +6,11 @@ const env = require('./scripts/_env');
 
 const plugins = [
   typescript(),
-  terser(),
+  // terser(),
   replace(env)
 ];
+
+const bundlesPath = 'dist/bundles/1/';
 
 module.exports = [
 // Consumer bundle 
@@ -16,29 +18,21 @@ module.exports = [
   input: './src/packages/client-controller/index.ts',
   plugins,
   output: [{
-    file: 'dist/bundles/localservice.js',
+    file: bundlesPath + 'localservice.js',
     format: 'esm'
   },
   {
-    file: 'dist/bundles/localservice.umd.js',
+    file: bundlesPath + 'localservice.umd.js',
     format: 'umd',
     name: 'LocalService'
   }]
 },
 // PWA-Server bundles
 {
-  input: './src/packages/pwa-server/relay/install.ts',
+  input: './src/packages/pwa-server/relay/boot.ts',
   plugins,
   output: {
-    file: 'dist/bundles/install.js',
-    format: 'esm'
-  }
-},
-{
-  input: './src/packages/pwa-server/relay/sw.ts',
-  plugins,
-  output: {
-    file: 'dist/bundles/sw.js',
+    file: bundlesPath + 'boot.js',
     format: 'esm'
   }
 },
@@ -46,7 +40,7 @@ module.exports = [
   input: './src/packages/pwa-server/relay/server.ts',
   plugins,
   output: {
-    file: 'dist/bundles/server.js',
+    file: bundlesPath + 'server.js',
     format: 'esm'
   }
 },
@@ -55,7 +49,7 @@ module.exports = [
   input: './src/packages/pwa-server/runtime/runtime-check.ts',
   plugins,
   output: {
-    file: 'dist/bundles/runtime-check.js',
+    file: bundlesPath + 'runtime-check.js',
     format: 'esm'
   }
 }]

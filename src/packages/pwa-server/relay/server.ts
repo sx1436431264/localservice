@@ -8,7 +8,7 @@ declare global {
   }
 }
 
-const ls = new LocalServiceAdapter({ relayPath: '/__commrelay__' });
+const ls = new LocalServiceAdapter({ relayPath: '/__commrelay__.html' });
 
 declare var clients: any;
 
@@ -29,7 +29,7 @@ self.addEventListener('activate', (event: any) => {
 self.addEventListener("fetch", function(event: any) {
   const { request } = event;
 
-  return ls.controllerConnected().then(connected => {
+  return event.respondWith(ls.controllerConnected().then(connected => {
     // If controller connected, route request to it.
     // url.origin === location.origin &&
     // !(
@@ -40,7 +40,7 @@ self.addEventListener("fetch", function(event: any) {
     if (connected) {
       return ls.controllerFetch(request);
     }
-  });
+  }));
 });
 
 // Message handler (runtime cmd+r check, broadcast, etc)
