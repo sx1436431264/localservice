@@ -3,7 +3,7 @@
       "module": "esnext",
       "moduleResolution": "node",
       "baseUrl": "./",
-      "outDir": "./tmp/",
+      // "outDir": "./tmp/",
       "declaration": true,
       "declarationDir": "./typings/",
       "paths": {

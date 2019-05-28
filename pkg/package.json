@@ -1,0 +1,10 @@
+{
+  "name": "localservice",
+  "version": "0.0.2",
+  "description": "",
+  "main": "bundles/localservice.js",
+  "module": "bundles/localservice.umd.js",
+  "types": "",
+  "author": "Eric Simons",
+  "license": "MIT"
+}

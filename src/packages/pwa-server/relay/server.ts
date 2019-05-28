@@ -29,6 +29,12 @@ self.addEventListener('activate', (event: any) => {
 self.addEventListener("fetch", function(event: any) {
   const { request } = event;
 
+  const url = new URL(request.url);
+
+  // Ensure request is for the server origin.
+  // i.e. let unpkg/etc requests flow through.
+  if (url.origin !== location.origin) return;
+  
   return event.respondWith(ls.controllerConnected().then(connected => {
     // If controller connected, route request to it.
     // url.origin === location.origin &&
@@ -41,6 +47,7 @@ self.addEventListener("fetch", function(event: any) {
       return ls.controllerFetch(request);
     }
   }));
+  
 });
 
 // Message handler (runtime cmd+r check, broadcast, etc)

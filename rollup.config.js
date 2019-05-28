@@ -6,7 +6,7 @@ const env = require('./scripts/_env');
 
 const plugins = [
   typescript(),
-  // terser(),
+  terser(),
   replace(env)
 ];
 
