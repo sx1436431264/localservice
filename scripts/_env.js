@@ -1,4 +1,4 @@
-const isProd = true;
+const isProd = process.env['NODE_ENV'] === 'production';
 
 // Major version # of localservice.
 // Used for consistent CDN asset locations.
