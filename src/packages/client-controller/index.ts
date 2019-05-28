@@ -13,8 +13,6 @@ export const startServer = (requestHandler: (request: Request) => Response | Pro
   iframe.style.width = '1px';
   document.body.appendChild(iframe);
 
-  console.log(`Server running at ${serverUrl}`)
-
   window.addEventListener('message', (e) => {
     if (e.origin === serverUrl) {
       handleRequest(e.data.payload, e.ports[0], requestHandler)

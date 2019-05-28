@@ -1,10 +1,10 @@
 {
   "name": "localservice",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "bundles/localservice.js",
   "module": "bundles/localservice.umd.js",
-  "types": "",
+  "types": "typings/packages/client-controller/index.d.ts",
   "author": "Eric Simons",
   "license": "MIT"
 }
